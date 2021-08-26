@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/syssim_project1.dir/main.cpp.o  -o syssim_project1 
