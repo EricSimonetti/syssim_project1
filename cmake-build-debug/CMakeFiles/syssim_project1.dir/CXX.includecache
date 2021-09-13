@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/creature.cpp
+iostream
+-
+sstream
+-
+vector
+-
+random
+-
+algorithm
+-
+string
+-
+
+/cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/main.cpp
+iostream
+-
+sstream
+-
+world.cpp
+/cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/world.cpp
+
+/cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/world.cpp
+iostream
+-
+sstream
+-
+string
+-
+creature.cpp
+/cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/creature.cpp
+
