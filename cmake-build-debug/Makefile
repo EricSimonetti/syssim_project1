@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/eric/clion-2019.3.2/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /cygdrive/c/Users/erics/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /home/eric/clion-2019.3.2/bin/cmake/linux/bin/cmake -E remove -f
+RM = /cygdrive/c/Users/erics/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eric/CLionProjects/syssim_project1
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eric/CLionProjects/syssim_project1/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/eric/CLionProjects/syssim_project1/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/eric/clion-2019.3.2/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/cygdrive/c/Users/erics/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/eric/clion-2019.3.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/cygdrive/c/Users/erics/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eric/CLionProjects/syssim_project1/cmake-build-debug/CMakeFiles /home/eric/CLionProjects/syssim_project1/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/cmake-build-debug/CMakeFiles /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eric/CLionProjects/syssim_project1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,33 @@ syssim_project1/fast:
 	$(MAKE) -f CMakeFiles/syssim_project1.dir/build.make CMakeFiles/syssim_project1.dir/build
 .PHONY : syssim_project1/fast
 
+creature.o: creature.cpp.o
+
+.PHONY : creature.o
+
+# target to build an object file
+creature.cpp.o:
+	$(MAKE) -f CMakeFiles/syssim_project1.dir/build.make CMakeFiles/syssim_project1.dir/creature.cpp.o
+.PHONY : creature.cpp.o
+
+creature.i: creature.cpp.i
+
+.PHONY : creature.i
+
+# target to preprocess a source file
+creature.cpp.i:
+	$(MAKE) -f CMakeFiles/syssim_project1.dir/build.make CMakeFiles/syssim_project1.dir/creature.cpp.i
+.PHONY : creature.cpp.i
+
+creature.s: creature.cpp.s
+
+.PHONY : creature.s
+
+# target to generate assembly for a file
+creature.cpp.s:
+	$(MAKE) -f CMakeFiles/syssim_project1.dir/build.make CMakeFiles/syssim_project1.dir/creature.cpp.s
+.PHONY : creature.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -150,6 +177,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/syssim_project1.dir/build.make CMakeFiles/syssim_project1.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+world.o: world.cpp.o
+
+.PHONY : world.o
+
+# target to build an object file
+world.cpp.o:
+	$(MAKE) -f CMakeFiles/syssim_project1.dir/build.make CMakeFiles/syssim_project1.dir/world.cpp.o
+.PHONY : world.cpp.o
+
+world.i: world.cpp.i
+
+.PHONY : world.i
+
+# target to preprocess a source file
+world.cpp.i:
+	$(MAKE) -f CMakeFiles/syssim_project1.dir/build.make CMakeFiles/syssim_project1.dir/world.cpp.i
+.PHONY : world.cpp.i
+
+world.s: world.cpp.s
+
+.PHONY : world.s
+
+# target to generate assembly for a file
+world.cpp.s:
+	$(MAKE) -f CMakeFiles/syssim_project1.dir/build.make CMakeFiles/syssim_project1.dir/world.cpp.s
+.PHONY : world.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... syssim_project1"
 	@echo "... edit_cache"
+	@echo "... creature.o"
+	@echo "... creature.i"
+	@echo "... creature.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... world.o"
+	@echo "... world.i"
+	@echo "... world.s"
 .PHONY : help
 
 

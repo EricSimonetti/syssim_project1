@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/eric/clion-2019.3.2/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /cygdrive/c/Users/erics/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /home/eric/clion-2019.3.2/bin/cmake/linux/bin/cmake -E remove -f
+RM = /cygdrive/c/Users/erics/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eric/CLionProjects/syssim_project1
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eric/CLionProjects/syssim_project1/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/syssim_project1.dir/depend.make
@@ -59,32 +59,62 @@ include CMakeFiles/syssim_project1.dir/flags.make
 
 CMakeFiles/syssim_project1.dir/main.cpp.o: CMakeFiles/syssim_project1.dir/flags.make
 CMakeFiles/syssim_project1.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eric/CLionProjects/syssim_project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/syssim_project1.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/syssim_project1.dir/main.cpp.o -c /home/eric/CLionProjects/syssim_project1/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/syssim_project1.dir/main.cpp.o"
+	C:/cygwin64/bin/g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/syssim_project1.dir/main.cpp.o -c /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/main.cpp
 
 CMakeFiles/syssim_project1.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/syssim_project1.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eric/CLionProjects/syssim_project1/main.cpp > CMakeFiles/syssim_project1.dir/main.cpp.i
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/main.cpp > CMakeFiles/syssim_project1.dir/main.cpp.i
 
 CMakeFiles/syssim_project1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/syssim_project1.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eric/CLionProjects/syssim_project1/main.cpp -o CMakeFiles/syssim_project1.dir/main.cpp.s
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/main.cpp -o CMakeFiles/syssim_project1.dir/main.cpp.s
+
+CMakeFiles/syssim_project1.dir/world.cpp.o: CMakeFiles/syssim_project1.dir/flags.make
+CMakeFiles/syssim_project1.dir/world.cpp.o: ../world.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/syssim_project1.dir/world.cpp.o"
+	C:/cygwin64/bin/g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/syssim_project1.dir/world.cpp.o -c /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/world.cpp
+
+CMakeFiles/syssim_project1.dir/world.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/syssim_project1.dir/world.cpp.i"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/world.cpp > CMakeFiles/syssim_project1.dir/world.cpp.i
+
+CMakeFiles/syssim_project1.dir/world.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/syssim_project1.dir/world.cpp.s"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/world.cpp -o CMakeFiles/syssim_project1.dir/world.cpp.s
+
+CMakeFiles/syssim_project1.dir/creature.cpp.o: CMakeFiles/syssim_project1.dir/flags.make
+CMakeFiles/syssim_project1.dir/creature.cpp.o: ../creature.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/syssim_project1.dir/creature.cpp.o"
+	C:/cygwin64/bin/g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/syssim_project1.dir/creature.cpp.o -c /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/creature.cpp
+
+CMakeFiles/syssim_project1.dir/creature.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/syssim_project1.dir/creature.cpp.i"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/creature.cpp > CMakeFiles/syssim_project1.dir/creature.cpp.i
+
+CMakeFiles/syssim_project1.dir/creature.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/syssim_project1.dir/creature.cpp.s"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/creature.cpp -o CMakeFiles/syssim_project1.dir/creature.cpp.s
 
 # Object files for target syssim_project1
 syssim_project1_OBJECTS = \
-"CMakeFiles/syssim_project1.dir/main.cpp.o"
+"CMakeFiles/syssim_project1.dir/main.cpp.o" \
+"CMakeFiles/syssim_project1.dir/world.cpp.o" \
+"CMakeFiles/syssim_project1.dir/creature.cpp.o"
 
 # External object files for target syssim_project1
 syssim_project1_EXTERNAL_OBJECTS =
 
-syssim_project1: CMakeFiles/syssim_project1.dir/main.cpp.o
-syssim_project1: CMakeFiles/syssim_project1.dir/build.make
-syssim_project1: CMakeFiles/syssim_project1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eric/CLionProjects/syssim_project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable syssim_project1"
+syssim_project1.exe: CMakeFiles/syssim_project1.dir/main.cpp.o
+syssim_project1.exe: CMakeFiles/syssim_project1.dir/world.cpp.o
+syssim_project1.exe: CMakeFiles/syssim_project1.dir/creature.cpp.o
+syssim_project1.exe: CMakeFiles/syssim_project1.dir/build.make
+syssim_project1.exe: CMakeFiles/syssim_project1.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable syssim_project1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/syssim_project1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/syssim_project1.dir/build: syssim_project1
+CMakeFiles/syssim_project1.dir/build: syssim_project1.exe
 
 .PHONY : CMakeFiles/syssim_project1.dir/build
 
@@ -93,6 +123,6 @@ CMakeFiles/syssim_project1.dir/clean:
 .PHONY : CMakeFiles/syssim_project1.dir/clean
 
 CMakeFiles/syssim_project1.dir/depend:
-	cd /home/eric/CLionProjects/syssim_project1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eric/CLionProjects/syssim_project1 /home/eric/CLionProjects/syssim_project1 /home/eric/CLionProjects/syssim_project1/cmake-build-debug /home/eric/CLionProjects/syssim_project1/cmake-build-debug /home/eric/CLionProjects/syssim_project1/cmake-build-debug/CMakeFiles/syssim_project1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1 /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1 /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/cmake-build-debug /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/cmake-build-debug /cygdrive/c/Users/erics/Desktop/CS/system_sim/Project1/cmake-build-debug/CMakeFiles/syssim_project1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/syssim_project1.dir/depend
 

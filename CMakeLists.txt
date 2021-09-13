@@ -3,4 +3,4 @@ project(syssim_project1)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(syssim_project1 main.cpp)
+add_executable(syssim_project1 main.cpp world.cpp creature.cpp)

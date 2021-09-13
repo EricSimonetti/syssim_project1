@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/syssim_project1.dir/main.cpp.o  -o syssim_project1 
+C:/cygwin64/bin/g++.exe -g  -Wl,--enable-auto-import CMakeFiles/syssim_project1.dir/main.cpp.o CMakeFiles/syssim_project1.dir/world.cpp.o CMakeFiles/syssim_project1.dir/creature.cpp.o  -o syssim_project1.exe -Wl,--out-implib,libsyssim_project1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
