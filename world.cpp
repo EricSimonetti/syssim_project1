@@ -2,9 +2,6 @@
 // Created by erics on 9/2/2021.
 //
 
-#include <iostream>
-#include <sstream>
-using namespace std;
 #include <string>
 using std::string;
 #include "creature.cpp"
@@ -18,7 +15,7 @@ private:
     int numCreatures = 0;
     room *north, *south, *east, *west;
     PC *pc;
-    creature *creatures[10];
+    std::vector<creature*> creatures;
 public:
     room(int index, int cleanliness, int indexNorth, int indexSouth, int indexEast, int indexWest){
         this -> index = index;
@@ -27,6 +24,9 @@ public:
         this -> indexSouth = indexSouth;
         this -> indexEast = indexEast;
         this -> indexWest = indexWest;
+        north = south = east = west = nullptr;
+        pc = nullptr;
+        creatures.reserve(10);
     }
 
     ~room(){
@@ -54,6 +54,7 @@ public:
             case(0): desc += ", clean,"; break;
             case(1): desc += ", half-dirty,"; break;
             case(2): desc += ", dirty,"; break;
+            default:;
         }
 
         desc += " neighbors ";
@@ -72,7 +73,11 @@ public:
     }
 
     string addCreature(creature *creature){
-        if(numCreatures<10){
+        int creaturesHere = numCreatures;
+        if(pc!= nullptr){
+            creaturesHere++; //im not sure whether this should be here
+        }
+        if(creaturesHere<10){
             creatures[numCreatures] = creature;
             numCreatures++;
             creatureAction(creature -> getType());
@@ -103,7 +108,7 @@ public:
                 return "delete me";
             }
 
-            std::vector<room*> roomList(listSize);
+            std::vector<room*> roomList((unsigned long)listSize);
             int curr = 0;
             if(indexNorth != -1) roomList[curr++] = north;
             if(indexSouth != -1) roomList[curr++] = south;
@@ -116,7 +121,7 @@ public:
             std::shuffle(roomList.begin(), roomList.end(), prng);
             int listIndex = 0;
             success = (isPC?
-                          (roomList[listIndex] -> addPC(static_cast<PC *>(creature))) :
+                          (roomList[listIndex] -> addPC(dynamic_cast<PC *>(creature))) :
                           (roomList[listIndex] -> addCreature(creature))
                       );
             while(success == "Room full"){
@@ -125,7 +130,7 @@ public:
                 }
                 listIndex++;
                 success = (isPC?
-                             (roomList[listIndex] -> addPC(static_cast<PC *>(creature))) :
+                             (roomList[listIndex] -> addPC(dynamic_cast<PC *>(creature))) :
                              (roomList[listIndex] -> addCreature(creature))
                           );
             }
@@ -144,7 +149,7 @@ public:
             switch (direction) {
                 case (0):
                     if (indexNorth != -1){
-                        success = isPC ? (north->addPC(static_cast<PC *>(creature))) : (north->addCreature(creature));
+                        success = isPC ? (north->addPC(dynamic_cast<PC *>(creature))) : (north->addCreature(creature));
                         if(success != "Room full") success = "north";
                     }
                     else
@@ -152,7 +157,7 @@ public:
                     break;
                 case (1):
                     if (indexSouth != -1){
-                        success = isPC ? (south->addPC(static_cast<PC *>(creature))) : (south->addCreature(creature));
+                        success = isPC ? (south->addPC(dynamic_cast<PC *>(creature))) : (south->addCreature(creature));
                         if(success != "Room full") success = "south";
                     }
                     else
@@ -160,7 +165,7 @@ public:
                     break;
                 case (2):
                     if (indexEast != -1){
-                        success = isPC ? (east->addPC(static_cast<PC *>(creature))) : (east->addCreature(creature));
+                        success = isPC ? (east->addPC(dynamic_cast<PC *>(creature))) : (east->addCreature(creature));
                         if(success != "Room full") success = "east";
                     }
                     else
@@ -168,7 +173,7 @@ public:
                     break;
                 case (3):
                     if (indexWest != -1){
-                        success = isPC ? (west->addPC(static_cast<PC *>(creature))) : (west->addCreature(creature));
+                        success = isPC ? (west->addPC(dynamic_cast<PC *>(creature))) : (west->addCreature(creature));
                         if(success != "Room full") success = "west";
                     }
                     else
@@ -224,7 +229,7 @@ public:
             return "Room is already dirty";
         }
 
-        creature *active;
+        creature *active = nullptr;
         bool found = false;
         if(creatureIndex != -1){ //looks for the creature made to do the action
             for(int i = 0; i<numCreatures; i++){
@@ -269,7 +274,7 @@ public:
                     removeCreature(creatures[i], true);
 
                     //creatures reaction to the current creature leaving through the roof
-                    string currReaction = "";
+                    string currReaction;
                     for(int j = 0; j<numCreatures; j++){
                         currReaction = creatures[j] -> react(action, true);
                         reaction += currReaction;

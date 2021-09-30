@@ -4,7 +4,8 @@
 
 using namespace std;
 
-int* separateInput(string input, int arr[]){
+std::vector<int> separateInput(string &input){
+    std::vector<int> arr;
     istringstream stringStream(input); // split string at spaces
     string intAsString; // for storing each number
 
@@ -25,14 +26,13 @@ int main() {
         cout << "Please enter a valid number of rooms";
         return 0;
     }
-    room *rooms[numRooms];
-    PC *pc;
+    std::vector<room*> rooms;
+    PC *pc = nullptr;
     int pcRoomIndex = 0;
 
     for(int i = 0; i<numRooms; i++){ //process room input
         getline(cin, input_line);
-        int arr[5];
-        int *inputs = separateInput(input_line, arr);
+        std::vector<int> inputs = separateInput(input_line);
         rooms[i] = new room(i, inputs[0], inputs[1], inputs[2], inputs[3], inputs[4]);
     }
 
@@ -53,8 +53,7 @@ int main() {
 
     for(int i = 0; i<numCreatures; i++){ //process creatures
         getline(cin, input_line);
-        int arr[2];
-        int* inputs = separateInput(input_line, arr);
+        std::vector<int> inputs = separateInput(input_line);
         if(inputs[0] == 0){
             pc = new PC(i, 0);
             pcRoomIndex = inputs[1];
@@ -89,7 +88,6 @@ int main() {
                 cout << "\"{creature name}:dirty\": Make the creature {creature name} dirty the current room" << endl;
                 cout << "\"exit\": Exit the game" << endl;
                 cout << "Note: commands are case-sensitive!" << endl;
-                //cout << "\"{creature name}:north\": Make a the creature {creature name} try to travel north" << endl;
             }
             else if(input_line == "look"){
                 cout << rooms[pcRoomIndex] -> description() << endl;
@@ -150,8 +148,8 @@ int main() {
     //clean up
     for(int i = 0; i<numRooms; i++){
         delete rooms[i]; //creatures are deleted inside of rooms;
-        delete pc;
     }
+    delete pc;
 
     return 0;
 }
